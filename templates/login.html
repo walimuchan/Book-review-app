@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container ml-1">
+        <form action="" method="POST">
+            {{form.hidden_tag()}}
+            <fieldset class="form-group">
+                <legend class="form_title">Login Here!</legend>
+            <!--EMAIL FIELD-->  
+            <div class="form-group">
+            {{form.email.label(class="form-control-label")}}
+            
+            {% if form.email.errors %}
+            {{form.email(class= "form-control-plaintext is-invalid")}}
+            <div class="invalid-feeback">
+                {% for error in form.email.errors %}
+                        <span>{{error}}</span>
+                {% endfor%}
+            </div>
+            {% else %}
+                {{form.email(class="form-control-plaintext")}}
+            {% endif%}    
+        </div> 
+        <!--PASSWORD FIELD-->
+        <div class="form-group">
+            {{form.password.label(class="form-control-label")}}
+            
+            {% if form.password.errors %}
+            {{form.password(class="form-control-plaintext is-invalid")}}
+            <div class="invalid-feeback">
+                {% for error in form.password.errors %}
+                        <span>{{error}}</span>
+                {% endfor%}
+            </div>
+            {% else %}
+                {{form.password(class="form-control-plaintext")}}
+            {% endif%}    
+            </div> 
+            </fieldset>
+            <div class="form-group">
+                {{form.submit(class="btn btn-success")}}
+                
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <div class="text-muted">
+                Create an account <a class="ml-3"href="{{url_for('signup')}}">Signup</a>
+            </div>
+        </div>
+    </div>
+        
+
+                  
+{% endblock content %}
+    
