@@ -3,18 +3,28 @@
   list-style-type: none;
   box-sizing: border-box;
 }
-body {
-  min-height: 100vh;
- 
+body{
+   
+  /* min-height: 100vh;
   display: flex;
   flex-direction: column;
-    
-  }
+  padding: 0; */
+ 
+}
 
-  main {
-    flex: 1 0 auto;
-  }
-  
+main{
+     /* flex: 1 0 auto; */
+     
+} 
+   
+.header h3{
+    display:block;
+    font:normal 60px Cookie, cursive;
+    /* font-weight:bold; */
+    margin-bottom:20px;
+    text-align: center;
+    text-shadow: 3px 2px 4px white;
+}
     
 /* footer */
   footer{
@@ -34,7 +44,7 @@ body {
   }
   .footer-navigation h3{
     margin:0;
-    font:normal 36px Cookie, cursive;
+    font:normal 40px Cookie, cursive;
     margin-bottom:20px;
     color:#fff;
   }
@@ -71,6 +81,14 @@ body {
     color:#ffffff;
     vertical-align:middle;
   }
+  .footer-contacts h4{
+    display:block;
+    color:#fff;
+    font:normal 35px Cookie, cursive;
+    /* font-weight:bold; */
+    margin-bottom:20px;
+    
+  }
   
   .footer-contacts p a{
     color:#5383d3;
@@ -101,14 +119,14 @@ body {
   .footer-about h4{
     display:block;
     color:#fff;
-    font-size:14px;
-    font-weight:bold;
+    font:normal 35px Cookie, cursive;
+    /* font-weight:bold; */
     margin-bottom:20px;
   }
   
   .footer-about p{
     line-height:20px;
-    color:#92999f;
+    color:#dce0e4;
     font-size:13px;
     font-weight:normal;
     margin:0;
@@ -134,20 +152,62 @@ body {
     margin-bottom:5px;
   }
   /* images */
-  .imageff{
-    width: 100%;
+  img{
+    width: 100%; 
+    opacity: .8
+    
   }
 
 #showcase{
   margin: 10px 0;
+  text-align: center;
+  position: relative;
+  
  
  
 }
-.content-section {
+#showcase p{
+  font:normal 40px Cookie, cursive;
+  text-shadow: 2px 3px 5px rgb(160, 176, 218);
+  
+}
+.jumbotron p{
+  font:normal 40px Cookie, cursive; }*/
+
+
+/* .content-section {
   background: #ffffff;
   padding: 10px 20px;
   border: 1px solid #dddddd;
   border-radius: 3px;
   margin-bottom: 20px;
   
+} */
+.container{
+  margin: auto;
+  
 }
+/* forms */
+#legend{
+  font:normal 50px Cookie, cursive;
+}
+
+
+
+.centered{
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(15, 15, 15);
+  font-weight:900;
+  text-shadow: 2px 2px 5px white;
+  box-shadow: 0 15px 35px rgba(14,35,38,0.1), 0 5px 15px rgba(0,0,0,0.05);
+  
+}
+
+
+
+ 
+
+

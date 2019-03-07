@@ -1,10 +1,10 @@
 {% extends "layout.html" %}
 {% block content %}
-    <div class="container ml-1">
+    <div class="container">
         <form action="" method="POST">
             {{form.hidden_tag()}}
             <fieldset class="form-group">
-                <legend class="form_title">Login Here!</legend>
+                <legend class="border-bottom mb-4" div id="legend">Login Here!</legend>
             <!--EMAIL FIELD-->  
             <div class="form-group">
             {{form.email.label(class="form-control-label")}}
