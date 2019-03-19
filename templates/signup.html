@@ -2,7 +2,11 @@
 
 {% block content %}
     <div class="container">
-        <form method="POST" action="{{ url_for('signup') }}">
+        <form method="POST" action="{{ url_for('signup') }}"> 
+            <div class="form-group">
+                <!-- <label>email</label>  -->
+                <input type="text" class="form-control"  placeholder="Enter email" name="email" required>
+            </div>
             <div class="form-group">
                 <!-- <label>Username</label> -->
                 <input type="text" class="form-control"  placeholder="Enter Username" name="username" required>
@@ -12,22 +16,22 @@
                 <input type="password" class="form-control" placeholder="Password" name="password" required>
               </div>
                 <div class="form-group">
-                <!-- <label > Confirm Password</label> -->
-                <input type="password" class="form-control" placeholder="Confirm Password" name="retype_password" required>
-              </div>
+                    <!-- <label > Confirm Password</label>  -->
+                    <input type="password" class="form-control" placeholder="confirm_password" name="confirm_password" required>
+                </div>
             
-              <button type="submit" class="btn">Submit</button>
+              <button type="submit" class="btn">Signup</button>
             </form>
             
         </form>
-    </div>
+    
             
-    <div class="border-top pt-3">
-        <small class="text-muted">
-            Already Have An Account? <a href="{{ url_for('login') }}" class="ml-2">login</a>
-        </small>
+        <div class="border-top pt-3">
+            <div class="text-muted ml-3">
+                Already Have An Account? <a href="{{ url_for('login') }}" class="ml-3">Log-in</a>
+            </div>
+        </div>
     </div>
-
 {% endblock %}
 
    

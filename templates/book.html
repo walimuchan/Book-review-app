@@ -4,42 +4,47 @@
     {{ book.title }}
 {% endblock %}
 
-{% block body %}
+{% block content %}
     <div class="container">
 
-    <h1>{{ book.title }} ({{ book.year }}) by {{ book.author }}</h1>
+    <h4>{{ book.title }} ({{ book.year }}) by {{ book.author }}</h4>
 
     <br>
 
     {% if link %}
-        <div class="container">
-              <div class="row">
-              <div class="col-sm-4">
-                  <div class="row">
-                      <div class="col-sm-4">
-                          <a href="{{ link }}"><img src="{{ image_url }}" alt="Book Cover"></a>
-                      </div>
-                      <div class="col-sm">
-                          <p><strong>Review Count   :</strong> {{ review_count }}</p>
-                          <p><strong>Average Rating :</strong> {{ avg_score }}</p>
-                      </div>
+            <div class="col-sm-4">
+                <div class="row">
+                  <div class="col-sm-8">
+                      <a href="{{ link }}"><img src="{{ image_url }}" alt="Book Cover"></a>
+                  </div>
+                  <div class="col-sm">
+                      <p><strong>Review Count   :</strong> {{ review_count }}</p>
+                      <p><strong>Average Rating :</strong> {{ avg_score }}</p>
                   </div>
                 </div>
-                  <div class="col-sm-8">
-                    <strong>Description:</strong>
-                    <br>
-                    <br>
-                    <p>{{ description }}</p>
-                </div>
-          </div>
+            </div>
+            <div class="col-sm-8">
+                <strong>About:</strong>
+                <br>
+                <br>
+                <p>{{ description }}</p>
+            </div>
+      
                 <div class="row">
-                    <div id="goodreads-widget">
-                      <div id="gr_header"><h1><a rel="nofollow" href="{{ link }}">{{ book.title }} Reviews</a></h1></div>
-                      <iframe id="the_iframe" src="https://www.goodreads.com/api/reviews_widget_iframe?did=DEVELOPER_ID&amp;format=html&amp;isbn={{ book.isbn }}&amp;links=660&amp;min_rating=&amp;review_back=fff&amp;stars=000&amp;text=000" width="565" height="400" frameborder="0"></iframe>
-                      <div id="gr_footer">
-                        <a class="gr_branding" target="_blank" rel="nofollow" href="{{ link }}?utm_medium=api&amp;utm_source=reviews_widget">Reviews from Goodreads.com</a>
-                      </div>
+                    <div id="review-box">
+                      <h4>Submit a Review</h4>
+                    <br>
+                    <form action="{{ url_for('review') }}" method="post">
+                        <div class="form-group">
+                            <textarea name="review" cols="30" rows="10" class="form-control" placeholder="Write a Review"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Submit</button>
+                    </form>
                 </div>
+                      <!-- <iframe id="the_iframe" src="https://www.goodreads.com/api/reviews_widget_iframe?did=DEVELOPER_ID&amp;format=html&amp;isbn={{ book.isbn }}&amp;links=660&amp;min_rating=&amp;review_back=fff&amp;stars=000&amp;text=000" width="565" height="400" frameborder="0"></iframe> -->
+                      
+                </div>
+                
     {% else %}
         <h3>No Info on book is Available</h3>
     {% endif %}
