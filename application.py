@@ -29,7 +29,6 @@ def login_required(f):
 	@wraps(f)
 	def decorated_function(*args, **kwargs):
 		if 'logged_in' not in session:
-			flash(f"your not logged in")
 			return redirect(url_for('login'))
 		return f(*args, **kwargs)
 	return decorated_function
@@ -216,7 +215,7 @@ def review():
         db.execute('INSERT INTO reviews(title, isbn, review, user_name) VALUES(:title, :isbn, :review, :username)',
                    {'title': book.title, 'isbn': isbn, 'review': review, 'username': username})
         db.commit()
-        flash(f"success")
+        
 
         
 
